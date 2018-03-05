@@ -11,19 +11,20 @@ module.exports = {
             'babel-polyfill',
             path.resolve(ENTRY_PATH, 'index.js')
         ],
-        vendor: ['react']
+        vendor: [ 'react', 'react-dom' ]
     },
     output: {
         path: OUTPUT_PATH,
         publicPath: '/',
         // filename: '[name]-[hash:8].js',
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     devServer: {
         contentBase: DEVSERVER_path,
         historyApiFallback: true,
         inline: true
     },
+    devtool: 'eval-source-map',
     module: {
         rules: [
             {
