@@ -33,8 +33,35 @@ module.exports = {
                 use: ['babel-loader']
             },
             {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]-[local]-[hash:base64:5]',
+                            importLoaders: 1
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    'sass-loader',
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [ 'style-loader', 'css-loader', 'less-loader' ]
             },
             {
                 test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,

@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import IndexApp from './containers'
+
 ReactDOM.render(
-    <div>my asds</div>,
+    <IndexApp />,
     document.getElementById('root')
 )
