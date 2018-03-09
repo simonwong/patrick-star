@@ -1,0 +1,9 @@
+@import "../../lib/color.scss";
+
+.container {
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin: 10px 0 10px 20px;
+    font-size: 18px;
+    border-left: 3px solid $themeColor;
+}

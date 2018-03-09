@@ -8,10 +8,11 @@ import {
 
 import Loading from '../components/loading/Loading'
 import NotFound from '../components/notFound/NotFound'
-import Blog from '../containers/blog'
-import Admin from '../containers/admin'
+import Blog from '../containers/blog/Blog'
+import Admin from '../containers/admin/Admin'
 
 import '../lib/normalize.css'
+import style from './indexApp.scss'
 
 class IndexApp extends Component {
     render() {
@@ -31,7 +32,7 @@ class IndexApp extends Component {
 }
 
 IndexApp.defaultProps = {
-    isFetching: true
+    isFetching: false
 }
 
 IndexApp.propTypes = {

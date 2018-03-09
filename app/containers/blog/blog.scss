@@ -1,0 +1,9 @@
+@import "../../lib/color.scss";
+
+.container {
+    background: $blogBg;
+}
+.centerContainer {
+    display: flex;
+    margin-top: 20px;
+}

@@ -1,0 +1,16 @@
+@import "../../lib/color.scss";
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    padding: 20px;
+    border-radius: 2px;
+    border-bottom: 1px solid $borderColor;
+}
+
+.meta {
+    display: flex;
+}
