@@ -1,4 +1,15 @@
 {
     "presets": [ "env", "react" ],
-    "plugins": [ "transform-runtime" ]
+    "plugins": [
+        "react-hot-loader/babel",
+        "transform-runtime",
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": "css"
+            }
+        ]
+    ]
 }
