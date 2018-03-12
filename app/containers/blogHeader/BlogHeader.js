@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Menu } from 'antd'
 
 import style from './blogHeader.scss'
 
@@ -14,27 +13,39 @@ class BlogHeader extends Component {
     constructor(props) {
         super(props);
 
+        // TODO: redux
+        this.state = {
+            activeItem: 'index'
+        }
+        this.onHandleClick = this.onHandleClick.bind(this)
+    }
+
+    onHandleClick(key) {
+        this.setState({
+            activeItem: key
+        })
     }
 
     render() {
         return (
             <header className={style.container}>
                 <h1 className={style.webMark}>王思杰的个人网站</h1>
-                <Menu
-                    className={style.menuWrap}
-                    mode='horizontal'
-                    style={{
-                        borderBottom: 'none'
-                    }}
-                >
+                <ul className={style.menuWrap}>
                     {
                         menuItems.map(item => (
-                            <Menu.Item key={item.key}>
+                            <li
+                                className={`${style.menuItem} ${
+                                    item.key === this.state.activeItem ?
+                                        style.active : ""}`
+                                }
+                                onClick={() => { this.onHandleClick(item.key) }}
+                                key={item.key}
+                            >
                                 { item.title }
-                            </Menu.Item>
+                            </li>
                         ))
                     }
-                </Menu>
+                </ul>
             </header>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { List, Avatar, Icon } from 'antd'
 
 import IconText from '../iconText/IconText'
+import TitleTag from '../titleTag/TitleTag'
 import style from './articleList.scss'
 
 const listData = [];
@@ -15,7 +16,7 @@ for (let i = 0; i < 5; i++) {
     viewNum: 199,
     commentNum: 66,
     publicDate: '2018/12/12',
-    tag: "前端笔记"
+    tag: "前端笔记,React"
   });
 }
 
@@ -37,9 +38,14 @@ class ArticleList extends Component {
             <ul className={style.list}>
                 {
                     listData.map(item => (
-                        <li className={style.item}>
+                        <li
+                            className={style.item}
+                            key={item.title}
+                        >
                             <div className={style.meta}>
-                                { item.tag }
+                                <TitleTag
+                                    tag={item.tag}
+                                />
                                 <h4 className={style.title}>{item.title}</h4>
                             </div>
                             <div className={style.msg}>

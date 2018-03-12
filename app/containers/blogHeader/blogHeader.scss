@@ -1,4 +1,4 @@
-@import "../../lib/color.scss";
+@import "../../lib/common.scss";
 
 .container {
     display: flex;
@@ -15,6 +15,26 @@
     min-width: 166px;
 }
 .menuWrap {
-    background: $blogBg;
-    /* flex: 1; */
+    list-style: none;
+}
+
+.menuItem {
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    cursor: pointer;
+    @include transition;
+
+    &.active {
+        color: $themeColor;
+        border-bottom: 2px solid $themeColor;
+        @include transition;
+    }
+
+    &:hover {
+        color: $themeColor;
+        border-bottom: 2px solid $themeColor;
+        @include transition;
+    }
 }
