@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import BlogHeader from '../blogHeader/BlogHeader'
 import BlogContent from '../blogContent/BlogContent'
+import BlogSider from '../blogSider/BlogSider'
+import BlogFooter from '../blogFooter/BlogFooter'
 import style from './blog.scss'
 
 class Blog extends Component {
@@ -11,9 +13,9 @@ class Blog extends Component {
                 <BlogHeader />
                 <div className={style.centerContainer}>
                     <BlogContent />
-                    <sider>sider</sider>
+                    <BlogSider />
                 </div>
-                <footer>footer</footer>
+                <BlogFooter />
             </div>
         )
     }

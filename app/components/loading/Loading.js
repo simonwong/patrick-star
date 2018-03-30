@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Spin, Icon } from 'antd'
 
-import style from './loading.css'
+import style from './loading.scss'
 
 const loadingIcon = <Icon type='loading' style={{ fontSize: 24 }} spin />
 

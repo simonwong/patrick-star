@@ -1,0 +1,25 @@
+@import "../../lib/common.scss";
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.item {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background: $themeColor;
+    opacity: 0.6;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+
+    @include transition;
+
+    &:hover {
+        opacity: 1;
+
+        @include transition;
+    }
+}

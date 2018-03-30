@@ -13,4 +13,14 @@
 
 .meta {
     display: flex;
+
+    .title {
+        cursor: pointer;
+        font-size: 15px;
+
+        &:hover {
+            color: $themeColor;
+            text-decoration: underline;
+        }
+    }
 }

@@ -1,0 +1,15 @@
+@import "../../lib/common.scss";
+
+.container {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $borderColor;
+    border-radius: 3px;
+    margin-bottom: 20px;
+
+    .title {
+        padding-left: 5px;
+        margin-bottom: 5px;
+        display: block;
+    }
+}

@@ -15,6 +15,7 @@ for (let i = 0; i < 5; i++) {
     content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
     viewNum: 199,
     commentNum: 66,
+    article_id: `00${i}${i}${i}`,
     publicDate: '2018/12/12',
     tag: "前端笔记,React"
   });
@@ -32,6 +33,10 @@ class ArticleList extends Component {
         super(props);
         
     }
+
+    enterDetail(articleId) {
+        console.log(articleId)
+    }
     
     render() {
         return (
@@ -40,13 +45,16 @@ class ArticleList extends Component {
                     listData.map(item => (
                         <li
                             className={style.item}
-                            key={item.title}
+                            key={item.article_id}
                         >
                             <div className={style.meta}>
                                 <TitleTag
                                     tag={item.tag}
                                 />
-                                <h4 className={style.title}>{item.title}</h4>
+                                <h4
+                                    className={style.title}
+                                    onClick={() => {this.enterDetail(item.article_id)}}
+                                >{item.title}</h4>
                             </div>
                             <div className={style.msg}>
                                 <IconText type="user" text={item.author} />
