@@ -16,7 +16,7 @@ class BlogContent extends Component {
                 <ListTitle
                     title="最新文章"
                 />
-                <ArticleList/>
+                <ArticleList articleList={this.props.articleList}/>
             </div>
         )
     }

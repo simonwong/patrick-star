@@ -5,6 +5,7 @@ import {
     Route,
     Switch,
 } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import Loading from '../components/loading/Loading'
 import NotFound from '../components/notFound/NotFound'
@@ -39,4 +40,22 @@ IndexApp.propTypes = {
     isFetching: PropTypes.bool.isRequired
 }
 
-export default IndexApp
+const mapStateToProps = (state) => {
+    const { isFetching, msg } = state.global
+
+    return {
+        isFetching,
+        msg,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(IndexApp)

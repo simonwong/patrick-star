@@ -1,18 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { AppContainer } from 'react-hot-loader'
 
 import IndexApp from './containers'
+import configureStore from './configureStore'
 
-if (module.hot) {
-    module.hot.accept(() => {
-        ReactDOM.render(
-            <IndexApp />,
-            document.getElementById('root')
-        )
-    })
-}
+const store = configureStore()
 
 ReactDOM.render(
-    <IndexApp />,
+    <AppContainer>
+        <Provider store={store}>
+            <IndexApp />
+        </Provider>
+    </AppContainer>,
     document.getElementById('root')
 )
+
+if (module.hot) {
+    module.hot.accept()
+}

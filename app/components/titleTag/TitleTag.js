@@ -2,8 +2,8 @@ import React from 'react'
 
 import style from './titleTag.scss'
 
-const TitleTag = ({ tag }) => {
-    const tagArr = tag.split(',')
+const TitleTag = ({ tags }) => {
+    const tagArr = tags.split(',')
 
     return (
         <div className={style.container}>
