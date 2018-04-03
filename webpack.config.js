@@ -92,7 +92,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: [ "style-loader", "css-loader", "postcss-loader", "less-loader" ]
+                use: [ "style-loader", "css-loader", "postcss-loader", "less-loader", ]
             },
             {
                 test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
@@ -115,6 +115,8 @@ module.exports = {
     plugins: [
         // 热更新
         new webpack.HotModuleReplacementPlugin(),
+        // 出错后不阻塞
+        new webpack.NoEmitOnErrorsPlugin(),
         // 根据模板文件，自动生成HTML
         new HtmlWebpackPlugin({
             title: "王思杰的个人网站",
