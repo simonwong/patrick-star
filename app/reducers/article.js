@@ -10,10 +10,11 @@ export const actionTypes = {
 }
 
 export const actions = {
-    get_article_list: (pageNum, tag) => ({
+    get_article_list: (params) => ({
         type: actionTypes.GET_ARTICLE_LIST,
-        pageNum,
-        tag,
+        payload: {
+            ...params,
+        }
     })
 }
 
@@ -22,7 +23,7 @@ export const reducer = (state = initialState, action) => {
         case actionTypes.RESPONSE_ARTICLE_LIST:
             return {
                 ...state,
-                articleList: action.data.articleList,
+                list: action.data.list,
                 total: action.data.total,
                 pageNum: action.data.pageNum
             }

@@ -8,6 +8,7 @@ const articleSchema = new mongoose.Schema({
     title: String, // 标题
     author: String, // 作者
     body: String, // 内容
+    type: Number, // 文章大类，前端文章 = 1，生活随笔 = 2
     tags: String, // 所属标签
     date: { // 日期
         type: Date,

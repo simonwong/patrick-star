@@ -1,6 +1,11 @@
 @import "../../lib/common.scss";
 
 .container {
+    width: 300px;
+    padding: 60px 20px 0 30px;
+}
+
+.block {
     width: 100%;
     padding: 10px;
     border: 1px solid $borderColor;

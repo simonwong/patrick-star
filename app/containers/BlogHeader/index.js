@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import style from './blogHeader.scss'
+import style from './index.scss'
 
 const menuItems = [
     { title: '首页', key: 'index', },

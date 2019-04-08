@@ -2,12 +2,12 @@ const { ArticleProxy } = require('../proxy')
 
 module.exports = class ArticleControllers {
     /**
-     * 获取文章
+     * 获取文章列表
      */
     static async list (ctx) {
-        let articles = await ArticleProxy.findAll()
+        let articles = await ArticleProxy.find(ctx.query)
         ctx.body = ctx.util.resuccess({
-            articleList: articles
+            list: articles
         })
     }
 
@@ -16,6 +16,7 @@ module.exports = class ArticleControllers {
      */
     static async add (ctx) {
         const { body } = ctx.request
+        // TODO: 非空验证
         const result = await ArticleProxy.addNew(body)
         ctx.body = ctx.util.resuccess()
     }

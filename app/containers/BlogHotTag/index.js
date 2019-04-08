@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import style from './blogHotTag.scss'
+import style from './index.scss'
 
 const hotTags = ['React', 'Es6', 'Babel', 'Vue', 'Redux']
 

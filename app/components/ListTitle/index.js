@@ -1,6 +1,6 @@
 import React from 'react'
 
-import style from './listTitle.scss'
+import style from './index.scss'
 
 const ListTitle = ({ title="", }) => (
     <div className={style.container}>

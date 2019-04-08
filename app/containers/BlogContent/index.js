@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import ListTitle from '../../components/listTitle/ListTitle'
-import ArticleList from '../../components/articleList/ArticleList'
-import style from './blogContent.scss'
+import ListTitle from 'Components/ListTitle'
+import ArticleList from 'Components/ArticleList'
+import style from './index.scss'
 
 class BlogContent extends Component {
     constructor(props) {

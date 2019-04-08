@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import Loading from '../components/loading/Loading'
-import NotFound from '../components/notFound/NotFound'
-import Blog from '../containers/blog/Blog'
-import Admin from '../containers/admin/Admin'
+import Loading from '../components/Loading'
+import NotFound from '../components/NotFound'
+import Blog from './Blog'
+import Admin from './Admin'
 
 import '../lib/normalize.css'
 import style from './indexApp.scss'
@@ -21,9 +21,9 @@ class IndexApp extends Component {
             <Router>
                 <div>
                     <Switch>
-                        <Route path='/404' component={NotFound} />
                         <Route path='/admin' component={Admin} />
-                        <Route component={Blog} />
+                        <Route path='/' component={Blog} />
+                        <Route component={NotFound} />
                     </Switch>
                     { this.props.isFetching && <Loading /> }
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import style from './titleTag.scss'
+import style from './index.scss'
 
 const TitleTag = ({ tags }) => {
     const tagArr = tags.split(',')
