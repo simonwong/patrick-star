@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import BlogHotTag from 'Containers/BlogHotTag'
+import BlogHotTag from 'Components/BlogHotTag'
 import style from './index.scss'
 
 const BlogSider = () => (

@@ -1,18 +1,5 @@
-//****************
-// color
+@import "./variable.scss";
 
-$blogBg: #f5f5d5;
-$themeColor: #ff764a;
-$tagColorYellow: #ffa724;
-$tagColorBlue: #009688;
-$borderColor: #d8d8d8;
-$heightLightColor: #ffffc8;
-
-
-//****************
-// mixin
-
-// 动画时间
-@mixin transition {
-    transition: all 0.3s;
+body {
+    background: $blogBg;
 }

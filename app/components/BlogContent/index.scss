@@ -1,6 +1,10 @@
-@import "../../lib/common.scss";
+@import "~@/lib/common.scss";
 
 .container {
+    flex: 1;
+}
+
+.title {
     box-sizing: border-box;
     padding-left: 10px;
     margin: 10px 0 10px 20px;

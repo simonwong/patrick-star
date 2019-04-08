@@ -1,0 +1,48 @@
+@import "~@/lib/common.scss";
+
+.container {
+    display: flex;
+    height: 48px;
+}
+.webMark {
+    user-select: none;
+    flex: 1;
+    font-size: 18px;
+    font-family: "Axure Handwriting";
+    margin: 0;
+    padding-left: 20px;
+    line-height: 48px;
+    min-width: 166px;
+}
+.menuWrap {
+    list-style: none;
+}
+
+.menuItem {
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    
+    cursor: pointer;
+    // @include transition;
+
+    a {
+        display: block;
+        height: 100%;
+        padding: 0 20px;
+        color: currentColor;
+        text-decoration: none;
+        
+        &.active {
+            color: $themeColor;
+            border-bottom: 2px solid $themeColor;
+            // @include transition;
+        }
+        &:hover {
+            color: $themeColor;
+            border-bottom: 2px solid $themeColor;
+            // @include transition;
+        }
+    }
+
+}

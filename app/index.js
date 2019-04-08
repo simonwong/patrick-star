@@ -6,6 +6,8 @@ import { AppContainer } from 'react-hot-loader'
 import IndexApp from './containers'
 import configureStore from './configureStore'
 
+import './lib/variable.scss'
+
 const store = configureStore()
 
 ReactDOM.render(
