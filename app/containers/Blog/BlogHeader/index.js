@@ -11,17 +11,28 @@ const menuItems = [
 ]
 
 class BlogHeader extends Component {
-    constructor(props) {
-        super(props);
-
-        // TODO: redux
-        this.state = {
-            activeItem: 'index'
-        }
-        this.onHandleClick = this.onHandleClick.bind(this)
+    state = {
+        activeItem: 'index',
+        showShadow: false,
     }
 
-    onHandleClick(key) {
+    componentDidMount () {
+        window.addEventListener('scroll', this.handleScroll)
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener('scroll', this.handleScroll)
+    }
+
+    handleScroll = (e) => {
+        const top = e.srcElement.scrollingElement.scrollTop
+
+        this.setState({
+            showShadow: !!top,
+        })
+    }
+
+    onHandleClick = (key) => {
         // const { onChange } = this.props
         this.setState({
             activeItem: key
@@ -30,8 +41,10 @@ class BlogHeader extends Component {
     }
 
     render() {
+        const { showShadow } = this.state
+
         return (
-            <header className={style.container}>
+            <header className={`${style.container} ${showShadow ? style.shadow : ''}`}>
                 <div className={style.content}>
                     <h1 className={style.webMark}>王思杰的个人网站</h1>
                     <ul className={style.menuWrap}>

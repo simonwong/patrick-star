@@ -1,9 +1,7 @@
 @import "~@/lib/common.scss";
 
 .container {
-    background: $blogBg;
-    // max-width: 1200px;
-    // margin: 0 auto;
+    padding-top: 68px;
 }
 .content {
     width: $layoutWidth;

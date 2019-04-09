@@ -29,19 +29,21 @@ class Blog extends Component {
         
 
         return (
-            <Router className={style.container}>
-                <BlogHeader onChange={this.handleMenuChange} />
-                <div className={style.content}>
-                    <Switch>
-                        <Route path='/home' component={BlogHome} />
-                        <Route path='/fenote' component={BlogNote} />
-                        <Route path='/essay' component={BlogEssay} />
-                        <Route path='/about' component={BlogAbout} />
-                        <Redirect to='/home' />
-                    </Switch>
-                </div>
-                <BlogFooter />
-            </Router>
+            <div className={style.container}>
+                <Router>
+                    <BlogHeader onChange={this.handleMenuChange} />
+                    <div className={style.content}>
+                        <Switch>
+                            <Route path='/home' component={BlogHome} />
+                            <Route path='/fenote' component={BlogNote} />
+                            <Route path='/essay' component={BlogEssay} />
+                            <Route path='/about' component={BlogAbout} />
+                            <Redirect to='/home' />
+                        </Switch>
+                    </div>
+                    <BlogFooter />
+                </Router>
+            </div>
         )
     }
 }
