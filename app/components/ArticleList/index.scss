@@ -13,14 +13,27 @@
 
 .meta {
     display: flex;
+    height: 30px;
+    line-height: 30px;
 
     .title {
         cursor: pointer;
         font-size: 15px;
+        margin: 0;
+        color: $titleFontColor;
+        font-weight: 400;
 
         &:hover {
             color: $themeColor;
             text-decoration: underline;
         }
     }
+}
+
+.msg {
+    margin: 10px 0;
+}
+
+.des {
+    color: $desFontColor;
 }

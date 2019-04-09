@@ -1,8 +1,10 @@
 import React from 'react'
 import { Icon } from 'antd'
 
+import styles from './index.scss'
+
 const IconText = ({ type, text }) => (
-    <span style={{ marginRight: 10 }}>
+    <span className={styles.container}>
         <Icon type={type} style={{ marginRight: 4 }} />
         { text }
     </span>

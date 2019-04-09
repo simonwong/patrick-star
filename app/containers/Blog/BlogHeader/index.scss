@@ -1,8 +1,15 @@
 @import "~@/lib/common.scss";
 
+$headerHeight: 68px;
+
 .container {
+    width: 100%;
+}
+.content {
+    width: $layoutWidth;
+    margin: 0 auto;
     display: flex;
-    height: 48px;
+    height: $headerHeight;
 }
 .webMark {
     user-select: none;
@@ -11,17 +18,20 @@
     font-family: "Axure Handwriting";
     margin: 0;
     padding-left: 20px;
-    line-height: 48px;
+    line-height: $headerHeight;
     min-width: 166px;
+    font-weight: 400;
+    color: $desFontColor;
 }
 .menuWrap {
     list-style: none;
+    margin: 0;
 }
 
 .menuItem {
     display: inline-block;
-    height: 48px;
-    line-height: 48px;
+    height: $headerHeight;
+    line-height: $headerHeight;
     
     cursor: pointer;
     // @include transition;
@@ -30,17 +40,16 @@
         display: block;
         height: 100%;
         padding: 0 20px;
-        color: currentColor;
+        color: $menuFontColor;
         text-decoration: none;
+        border-radius: 0 0 100% 100%;
         
+        &:hover {
+            background: $menuHoverHeighLightBg;
+        }
         &.active {
             color: $themeColor;
-            border-bottom: 2px solid $themeColor;
-            // @include transition;
-        }
-        &:hover {
-            color: $themeColor;
-            border-bottom: 2px solid $themeColor;
+            background: $menuHeighLightBg;
             // @include transition;
         }
     }

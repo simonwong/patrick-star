@@ -1,13 +1,24 @@
 //****************
 // color
 
-$blogBg: #f5f5d5;
-$themeColor: #ff764a;
+$blogBg: #fff;
+$themeColor: #1a73e8;
 $tagColorYellow: #ffa724;
 $tagColorBlue: #009688;
-$borderColor: #d8d8d8;
+$borderColor: #dadce0;
 $heightLightColor: #ffffc8;
 
+$titleFontColor: #202124;
+$desFontColor: #5f6368;
+
+// menu
+$menuFontColor: #3c4043;
+$menuHeighLightBg: #e8f0fe;
+$menuHoverHeighLightBg: rgb(245, 245, 245);
+
+
+// px
+$layoutWidth: 1200px;
 
 //****************
 // mixin

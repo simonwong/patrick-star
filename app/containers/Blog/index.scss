@@ -2,7 +2,11 @@
 
 .container {
     background: $blogBg;
-    max-width: 1200px;
+    // max-width: 1200px;
+    // margin: 0 auto;
+}
+.content {
+    width: $layoutWidth;
     margin: 0 auto;
 }
 .centerContainer {

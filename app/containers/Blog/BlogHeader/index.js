@@ -32,26 +32,28 @@ class BlogHeader extends Component {
     render() {
         return (
             <header className={style.container}>
-                <h1 className={style.webMark}>王思杰的个人网站</h1>
-                <ul className={style.menuWrap}>
-                    {
-                        menuItems.map(item => (
-                            <li
-                                className={style.menuItem}
-                                onClick={() => { this.onHandleClick(item.key) }}
-                                key={item.key}
-                            >
-                                <NavLink
-                                    to={`/${item.key}`}
-                                    activeClassName={style.active}
+                <div className={style.content}>
+                    <h1 className={style.webMark}>王思杰的个人网站</h1>
+                    <ul className={style.menuWrap}>
+                        {
+                            menuItems.map(item => (
+                                <li
+                                    className={style.menuItem}
+                                    onClick={() => { this.onHandleClick(item.key) }}
+                                    key={item.key}
                                 >
-                                    { item.title }
-                                </NavLink>
-                            </li>
-                            
-                        ))
-                    }
-                </ul>
+                                    <NavLink
+                                        to={`/${item.key}`}
+                                        activeClassName={style.active}
+                                    >
+                                        { item.title }
+                                    </NavLink>
+                                </li>
+                                
+                            ))
+                        }
+                    </ul>
+                </div>
             </header>
         )
     }

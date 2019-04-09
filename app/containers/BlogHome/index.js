@@ -10,13 +10,10 @@ import BlogSider from 'Components/BlogSider'
 import styles from './index.scss'
 
 class BlogFenote extends Component {
-    componentWillMount() {
-        if (this.props.list.length === 0) {
-            this.props.get_article_list({
-                type: null,
-                isPublish: true,
-            })
-        }
+    componentDidMount() {
+        this.props.get_article_list({
+            isPublish: true,
+        })
     }
 
     render () {
