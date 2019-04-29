@@ -26,8 +26,6 @@ class Blog extends Component {
     }
 
     render() {
-        
-
         return (
             <div className={style.container}>
                 <Router>

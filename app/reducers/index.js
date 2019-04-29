@@ -1,7 +1,5 @@
 import { combineReducers } from 'redux'
 
-import { reducer as article } from './article'
-
 const initialState = {
     isFetching: 0,
     msg: {
@@ -54,5 +52,4 @@ export const reducer = (state = initialState, action) => {
 
 export default combineReducers({
     global: reducer,
-    article,
 })
