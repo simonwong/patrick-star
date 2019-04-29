@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 import { reducer as article } from './article'
 
 const initialState = {
-    isFetching: false,
+    isFetching: 0,
     msg: {
         type: 1,
         content: ''
@@ -31,12 +31,12 @@ export const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_START:
             return {
                 ...state,
-                isFetching: true,
+                isFetching: state.isFetching + 1,
             }
         case actionTypes.FETCH_END:
             return {
                 ...state,
-                isFetching: false,
+                isFetching:  state.isFetching - 1,
             }
         case actionTypes.SET_MESSAGE:
             return {

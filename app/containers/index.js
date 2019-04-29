@@ -7,15 +7,16 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import { hot } from 'react-hot-loader/root'
 import Loading from 'Components/Loading'
 import NotFound from './NotFound'
 import Blog from './Blog'
 import Admin from './Admin'
 
-import '../lib/normalize.css'
-
 class IndexApp extends Component {
     render() {
+        const { isFetching } = this.props
+
         return (
             <Router>
                 <div>
@@ -24,7 +25,7 @@ class IndexApp extends Component {
                         <Route path='/' component={Blog} />
                         <Route component={NotFound} />
                     </Switch>
-                    { this.props.isFetching && <Loading /> }
+                    <Loading loading={isFetching} />
                 </div>
             </Router>
         )
@@ -36,7 +37,7 @@ IndexApp.defaultProps = {
 }
 
 IndexApp.propTypes = {
-    isFetching: PropTypes.bool.isRequired
+    isFetching: PropTypes.number.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -54,7 +55,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(IndexApp)
+export default hot(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(IndexApp)
+)

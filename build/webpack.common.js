@@ -47,14 +47,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            localIdentName: '[name]-[local]-[hash:base64:5]',
-                            importLoaders: 1,
-                        },
-                    },
+                    'css-loader',
                     'postcss-loader',
                 ],
             },
@@ -64,7 +57,13 @@ module.exports = {
                 use: [
                     'style-loader',
                     'postcss-loader',
-                    'less-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true,
+                            sourceMap: true,
+                        },
+                    },
                 ],
             },
             {
