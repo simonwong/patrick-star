@@ -1,0 +1,21 @@
+@import '~@/styles/variable.scss';
+
+.container {
+    :global {
+        .MuiAppBar-colorPrimary {
+            background: #fff;
+            color: $font-color-second;
+        }
+        .MuiTypography-h6 {
+            font-weight: 400;
+        }
+    }
+
+    &.hideShadow {
+        :global {
+            .MuiPaper-elevation4 {
+                box-shadow: none;
+            }
+        }
+    }
+}

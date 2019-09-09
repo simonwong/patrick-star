@@ -1,0 +1,23 @@
+@import '@/styles/variable.scss';
+
+.wrapper {
+    padding-top: $global-header-height;
+}
+.layout {
+    display: flex;
+
+    .side {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 64px);
+
+        // &.sideHide {
+
+        // }
+    }
+    .content {
+        margin: 0 30px;
+        flex: 1;
+    }
+}
+
