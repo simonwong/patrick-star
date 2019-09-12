@@ -3,18 +3,92 @@ import { Router as IRouter } from 'dva'
 import { Router, Switch, Route } from 'dva/router'
 
 import BasicLayout from '@/layout/BasicLayout'
-import HomePage from '@/pages/Home'
+import TechnicalArticle from '@/pages/TechnicalArticle'
+import RecordLife from '@/pages/RecordLife'
+import AboutMe from '@/pages/AboutMe'
 
+interface IRouterConfig {
+    path: string
+    redirect?: string
+    // TODO: 这个类型的定义
+    component?: any
+    routes?: Array<IRouterConfig>
+    icon?: string
+    name?: string
+
+    hideInMenu?: boolean
+}
+
+export const routerConfig: Array<IRouterConfig> = [
+    {
+        path: '/',
+        component: BasicLayout,
+        routes: [
+            { path: '/', redirect: '/article' },
+            {
+                path: '/article',
+                name: '技术文章',
+                icon: 'article',
+                component: TechnicalArticle,
+            },
+            {
+                path: '/life',
+                name: '记录生活',
+                icon: 'life',
+                component: RecordLife,
+            },
+            {
+                path: '/about',
+                name: '关于我',
+                icon: 'about',
+                component: AboutMe,
+            },
+        ],
+    },
+]
+
+function generateRouter<T extends IRouterConfig>(routerArray: Array<T>): any {
+    function mapFunction(router: T): any {
+        if (router.routes && router.routes.length) {
+            return (
+                <Route
+                    key={router.path}
+                    path={router.path}
+                    component={() => (
+                        <router.component>
+                            <Switch>
+                                {generateRouter(router.routes)}
+                            </Switch>
+                        </router.component>
+                    )}
+                />
+            )
+        }
+        return (
+            <Route
+                key={router.path}
+                path={router.path}
+                component={router.component}
+            />
+        )
+    }
+    return (
+        <Switch>
+            {routerArray.map(mapFunction)}
+        </Switch>
+    )
+}
+console.log(generateRouter(routerConfig))
 const AppRouter: IRouter = ({ history }) => (
     <Router history={history}>
-        <BasicLayout>
+        { generateRouter(routerConfig) }
+        {/* <BasicLayout>
             <Switch>
-                <Route
-                    path="/home"
-                    component={HomePage}
-                />
+                <Route path="/article" component={TechnicalArticle} />
+                <Route path="/life" component={RecordLife} />
+                <Route path="/about" component={AboutMe} />
             </Switch>
-        </BasicLayout>
+        </BasicLayout> */}
     </Router>
 )
 

@@ -79,7 +79,7 @@ const eslintrc = {
         // 'react/sort-comp': 'off',
         'react/prop-types': 'off',
         'react/jsx-first-prop-new-line': ['error', 'multiline'],
-        'react/jsx-max-props-per-line': ['error', { 'maximum': 1, 'when': 'always' }],
+        'react/jsx-max-props-per-line': ['error', { 'maximum': 2, 'when': 'always' }],
         // 'react/jsx-filename-extension': ['warn', {
         //     extensions: ['.js', '.jsx', '.md']
         // }],
