@@ -6,46 +6,42 @@ import MenuList from '@material-ui/core/MenuList'
 
 import CustomIcon from '@/components/CustomIcon'
 
+import { IRouterConfig } from '@/router'
+
 import styles from './index.scss'
 
-export interface IMenuObj {
-    name: string
-    path: string
-    key: string
-    icon: string
-}
-
-export interface IOnChange {
-    (item: IMenuObj): void
-}
-
 export interface IMenuProps {
-    menu: Array<IMenuObj>
+    menu: Array<IRouterConfig>
     current: string
-    onChange?: IOnChange
+    onChange?: (item: IRouterConfig) => void
 }
 
 const MenuBar: React.SFC<IMenuProps> = ({ menu, current, onChange }) => (
     <div className={styles.wrap}>
         <MenuList className={styles.menu}>
             {
-                menu.map((item) => (
-                    <MenuItem
-                        key={item.key}
-                        className={classname(styles.item, item.key === current ? styles.active : '')}
-                        onClick={() => onChange && onChange(item)}
-                    >
-                        {
-                            item.icon && (
-                                <CustomIcon
-                                    className={styles.icon}
-                                    type={item.icon}
-                                />
-                            )
-                        }
-                        { item.name }
-                    </MenuItem>
-                ))
+                menu.map((item) => {
+                    if (item.name) {
+                        return (
+                            <MenuItem
+                                key={item.path}
+                                className={classname(styles.item, item.path === current ? styles.active : '')}
+                                onClick={() => onChange && onChange(item)}
+                            >
+                                {
+                                    item.icon && (
+                                        <CustomIcon
+                                            className={styles.icon}
+                                            type={item.icon}
+                                        />
+                                    )
+                                }
+                                { item.name }
+                            </MenuItem>
+                        )
+                    }
+                    return null
+                })
             }
         </MenuList>
     </div>

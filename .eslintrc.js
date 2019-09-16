@@ -9,6 +9,7 @@ const eslintrc = {
         '@typescript-eslint',
         'babel',
         'react',
+        'react-hooks',
         'jsx-a11y'
     ],
     env: {
@@ -34,6 +35,8 @@ const eslintrc = {
     },
     rules: {
         // 'prettier/prettier': 'error',
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
 
         // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules
         '@typescript-eslint/consistent-type-definitions': 0,

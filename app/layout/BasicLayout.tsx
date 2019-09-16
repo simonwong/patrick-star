@@ -1,23 +1,41 @@
 import * as React from 'react'
-import classname from 'classnames'
+import { Dispatch } from 'redux'
+import { connect } from 'dva'
 import { hot } from 'react-hot-loader/root'
+import classname from 'classnames'
 
 import Slide from '@material-ui/core/Slide'
 import MenuBar from '@/components/MenuBar'
 import GlobalHeader from '@/components/GlobalHeader'
 import GlobalFooter from '@/components/GlobalFooter'
 
+import { IRouterConfig } from '@/router'
+
 import styles from './BasicLayout.scss'
 
-const BasicLayout: React.SFC = ({ children }) => {
-    const [showMenu, setShowMenuState] = React.useState(true)
+export interface IBasicProps {
+    routerData?: Array<IRouterConfig>,
+    dispatch: Dispatch,
+    collapsed: boolean,
+    currentMenu: string,
+}
+const BasicLayout: React.FC<IBasicProps> = ({
+    children,
+    routerData = [],
+    dispatch,
+    collapsed,
+    currentMenu,
+}) => {
     const handleToggleShowMenu = () => {
-        setShowMenuState(!showMenu)
+        dispatch({
+            type: 'menu/changeLayoutCollapsed',
+        })
     }
-
-    const [currentMenu, setCurrentMenuState] = React.useState('article')
     const handleChangeMenu = (item) => {
-        setCurrentMenuState(item.key)
+        dispatch({
+            type: 'menu/changeMenu',
+            payload: item.path,
+        })
     }
 
     return (
@@ -28,32 +46,11 @@ const BasicLayout: React.SFC = ({ children }) => {
             <div className={styles.layout}>
                 <Slide
                     direction="right"
-                    in={showMenu}
+                    in={collapsed}
                 >
-                    <div className={classname(styles.side, showMenu ? '' : styles.sideHide)}>
+                    <div className={classname(styles.side, collapsed ? '' : styles.sideHide)}>
                         <MenuBar
-                            menu={
-                                [
-                                    {
-                                        name: '技术文章',
-                                        path: '',
-                                        key: 'article',
-                                        icon: 'article',
-                                    },
-                                    {
-                                        name: '记录生活',
-                                        path: '',
-                                        key: 'life',
-                                        icon: 'life',
-                                    },
-                                    {
-                                        name: '关于我',
-                                        path: '',
-                                        key: 'about',
-                                        icon: 'about',
-                                    },
-                                ]
-                            }
+                            menu={routerData}
                             current={currentMenu}
                             onChange={handleChangeMenu}
                         />
@@ -67,4 +64,10 @@ const BasicLayout: React.SFC = ({ children }) => {
         </div>
     )
 }
-export default hot(BasicLayout)
+
+export default hot(
+    connect(({ menu }) => ({
+        collapsed: menu.collapsed,
+        currentMenu: menu.currentMenu,
+    }))(BasicLayout),
+)

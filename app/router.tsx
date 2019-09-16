@@ -1,13 +1,15 @@
 import * as React from 'react'
 import { Router as IRouter } from 'dva'
-import { Router, Switch, Route } from 'dva/router'
+import {
+    Router, Switch, Route, Redirect,
+} from 'dva/router'
 
 import BasicLayout from '@/layout/BasicLayout'
 import TechnicalArticle from '@/pages/TechnicalArticle'
 import RecordLife from '@/pages/RecordLife'
 import AboutMe from '@/pages/AboutMe'
 
-interface IRouterConfig {
+export interface IRouterConfig {
     path: string
     redirect?: string
     // TODO: 这个类型的定义
@@ -55,12 +57,22 @@ function generateRouter<T extends IRouterConfig>(routerArray: Array<T>): any {
                     key={router.path}
                     path={router.path}
                     component={() => (
-                        <router.component>
+                        <router.component routerData={router.routes}>
                             <Switch>
-                                {generateRouter(router.routes)}
+                                {generateRouter(router.routes || [])}
                             </Switch>
                         </router.component>
                     )}
+                />
+            )
+        }
+        if (router.redirect) {
+            return (
+                <Redirect
+                    exact
+                    key={router.path}
+                    from={router.path}
+                    to={router.redirect}
                 />
             )
         }
@@ -78,7 +90,7 @@ function generateRouter<T extends IRouterConfig>(routerArray: Array<T>): any {
         </Switch>
     )
 }
-console.log(generateRouter(routerConfig))
+
 const AppRouter: IRouter = ({ history }) => (
     <Router history={history}>
         { generateRouter(routerConfig) }
