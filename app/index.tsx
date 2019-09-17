@@ -13,6 +13,7 @@ const app = dva({
 
 app.model(global)
 app.model(menu)
+
 app.router(router)
 
 app.start('#root')

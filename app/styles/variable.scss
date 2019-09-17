@@ -7,13 +7,16 @@ $green-color: rgb(87, 165, 91);
 
 // 背景色
 $background-color: #fff;
-$background-active-base: rgba($color: $primary-color, $alpha: 0.15);
-$background-active-second: rgba($color: $primary-color, $alpha: 0.05);
+$background-active-base: rgba($primary-color, 0.15);
+$background-active-second: rgba($primary-color, 0.05);
 
 // 字体颜色
 $font-color-title: #202124;
 $font-color-base: #3c4043;
 $font-color-second: #5f6368;
+
+// 线条色
+$border-color-base: rgba(0, 0, 0, 0.12);
 
 $tagColorYellow: #ffa724;
 $tagColorBlue: #009688;

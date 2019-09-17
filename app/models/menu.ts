@@ -4,15 +4,11 @@ export default {
     namespace: 'menu',
     state: {
         collapsed: true,
-        currentMenu: window.location.pathname,
+        currentMenu: '',
     },
     effects: {
         * changeMenu({ payload }, { put }) {
             yield put(routerRedux.push(payload))
-            yield put({
-                type: 'saveCurrentMenu',
-                payload,
-            })
         },
     },
     reducers: {
@@ -27,6 +23,17 @@ export default {
                 ...state,
                 currentMenu: payload,
             }
+        },
+    },
+
+    subscriptions: {
+        listenPathname({ dispatch, history }) {
+            history.listen((path /*  action */) => {
+                dispatch({
+                    type: 'saveCurrentMenu',
+                    payload: path.pathname,
+                })
+            })
         },
     },
 }
