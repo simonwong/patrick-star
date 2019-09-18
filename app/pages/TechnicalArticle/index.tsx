@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import styles from './index.scss'
 
-const TechnicalArticle = () => {
-    const [list, setListData] = useState([])
+export interface IArticleItem {
+    id: string
+    date: string
+    title: string
+}
+
+const TechnicalArticle: React.FC = () => {
+    const [list, setListData] = useState<IArticleItem[]>([])
 
     useEffect(() => {
         setListData([
@@ -16,7 +22,7 @@ const TechnicalArticle = () => {
         <div className={styles.container}>
             <ul className={styles.list}>
                 {
-                    list.map((item) => (
+                    list.map((item: IArticleItem) => (
                         <li key={item.id}>
                             <span className={styles.publishDate}>{ item.date }</span>
                             <h3 className={styles.title}>{ item.title }</h3>

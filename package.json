@@ -78,6 +78,7 @@
         "sass-loader": "^8.0.0",
         "style-loader": "^1.0.0",
         "ts-loader": "^6.0.4",
+        "ts-node": "^8.4.1",
         "typescript": "^3.6.2",
         "typings-for-css-modules-loader": "^1.7.0",
         "url-loader": "^2.1.0",
@@ -109,7 +110,8 @@
     "scripts": {
         "start": "webpack-dev-server --config ./build/webpack.dev.js",
         "build": "webpack --config ./build/webpack.prod.js",
-        "server": "cross-env NODE_ENV=development nodemon server/app.js",
+        "server": "tsc && node distServer/app.js",
+        "server:oldversion": "cross-env NODE_ENV=development nodemon server/app.js",
         "eslint": "eslint app --fix --ext .ts,.tsx",
         "npm-check": "npm-check -u"
     },
