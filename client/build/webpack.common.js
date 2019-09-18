@@ -6,7 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const PATHS = {
     build: __dirname,
-    src: path.join(__dirname, '../app'),
+    src: path.join(__dirname, '../src'),
     public: path.join(__dirname, '../public'),
     dist: path.join(__dirname, '../dist'),
 }
@@ -111,6 +111,7 @@ module.exports = {
             color: '#3f51b5',
         }),
         new ForkTsCheckerWebpackPlugin({
+            tsconfig: path.join(__dirname, '../tsconfig.json'),
             eslint: true,
         }), // 在单独的进程上运行TypeScript类型检查器
         new HtmlWebpackPlugin({

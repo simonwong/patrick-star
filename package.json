@@ -108,8 +108,8 @@
         "url": "git+https://github.com/simonjayw/my-blog.git"
     },
     "scripts": {
-        "start": "webpack-dev-server --config ./build/webpack.dev.js",
-        "build": "webpack --config ./build/webpack.prod.js",
+        "start": "webpack-dev-server --config ./client/build/webpack.dev.js",
+        "build": "webpack --config ./client/build/webpack.prod.js",
         "server": "tsc && node distServer/app.js",
         "server:oldversion": "cross-env NODE_ENV=development nodemon server/app.js",
         "eslint": "eslint app --fix --ext .ts,.tsx",

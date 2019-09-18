@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        /* Basic Options */
+        "target": "es2017",
+        "module": "commonjs",
+        "allowJs": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+
+        "removeComments": true,
+
+        /* Strict Type-Checking Options */
+        "strict": true,
+        "noImplicitAny": true,
+
+        /* Module Resolution Options */
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "esModuleInterop": true,
+
+
+        /* Experimental Options */
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src"
+    ]
+}

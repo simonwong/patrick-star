@@ -5,7 +5,6 @@ import {
 } from 'dva/router'
 
 import BasicLayout from '@/layout/BasicLayout'
-import Home from '@/pages/Home'
 import TechnicalArticle from '@/pages/TechnicalArticle'
 import RecordLife from '@/pages/RecordLife'
 import AboutMe from '@/pages/AboutMe'
@@ -27,7 +26,6 @@ export const routerConfig: Array<IRouterConfig> = [
         path: '/',
         component: BasicLayout,
         routes: [
-            // { path: '/', component: Home },
             { path: '/', redirect: '/article' },
             {
                 path: '/article',
