@@ -16,11 +16,6 @@
         /* Module Resolution Options */
         "moduleResolution": "node",
         "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"]
-        },
-        "esModuleInterop": true,
-
 
         /* Experimental Options */
         "experimentalDecorators": true
