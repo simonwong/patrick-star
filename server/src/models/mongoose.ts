@@ -1,6 +1,4 @@
-'use strict'
-
-const mongoose = require('mongoose')
+import * as mongoose from 'mongoose'
 
 const mongoUrl = 'mongodb://localhost'
 
@@ -13,7 +11,3 @@ mongoose.connect(mongoUrl, {
         process.exit(1)
     }
 })
-
-module.exports = {
-    Article: require('./article'),
-}
