@@ -59,6 +59,8 @@ const eslintrc = {
         '@typescript-eslint/member-delimiter-style': [0, { delimiter: 'none' }], // 成员分隔符
         'default-case': 0,
         'guard-for-in': 0,
+
+        // https://github.com/benmosher/eslint-plugin-import
         'import/no-extraneous-dependencies': [
             'error',
             { devDependencies: ['**/*.stubs.ts', '**/*.test.*'] },
@@ -66,15 +68,6 @@ const eslintrc = {
         'import/first': 0,
         'import/no-unresolved': 0,
         'import/prefer-default-export': 0,
-        'no-console': 0,
-        'no-continue': 0,
-        'no-empty-function': 0,
-        'no-restricted-syntax': 0,
-        'no-param-reassign': 0,
-        'no-return-await': 0,
-        'no-shadow': 0,
-        'no-undef': 0,
-        'no-useless-constructor': 0,
 
         // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
         'react/jsx-filename-extension': ['error', { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
@@ -121,6 +114,15 @@ const eslintrc = {
         // 'function-paren-newline': 'off',
         // 'object-curly-newline': 'off',
         // 'no-restricted-globals': 'off',
+        'no-console': 0,
+        'no-continue': 0,
+        'no-empty-function': 0,
+        'no-restricted-syntax': 0,
+        'no-param-reassign': 0,
+        'no-return-await': 0,
+        'no-shadow': 0,
+        'no-undef': 0,
+        'no-useless-constructor': 0,
     },
     // settings: {
     //     polyfills: ['fetch', 'promises']
