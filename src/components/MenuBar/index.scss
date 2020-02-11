@@ -1,0 +1,43 @@
+@import '~@/styles/variable.scss';
+
+.wrap {
+  width: $global-menu-width;
+  box-sizing: border-box;
+  flex: 1;
+  @include transition;
+
+  .menu {
+    width: $global-menu-width;
+    outline: none;
+
+    @include transition;
+
+    .item {
+      border-radius: 0 100px 100px 0;
+      @include transition;
+
+      .icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+      }
+
+      &:hover {
+        color: $primary-color;
+        background: $background-active-second;
+        @include transition;
+      }
+    }
+
+    .active {
+      color: $primary-color;
+      background: $background-active-base;
+      @include transition;
+
+      &:hover {
+        background: $background-active-base;
+        @include transition;
+      }
+    }
+  }
+}

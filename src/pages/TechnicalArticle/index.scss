@@ -1,0 +1,43 @@
+@import '~@/styles/variable.scss';
+
+.container {
+  display: flex;
+}
+.list {
+  flex: 1;
+
+  li {
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-bottom: 1px solid $border-color-base;
+    @include transition;
+
+    &:hover {
+      color: $primary-color;
+      border-color: $primary-color;
+
+      @include transition;
+    }
+  }
+
+  .publishDate {
+    margin-right: 20px;
+    font-size: 13px;
+
+    // &:after {
+    //     content: '>>'
+    // }
+  }
+
+  .title {
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.placeholder {
+    width: 100px;
+}
