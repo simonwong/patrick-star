@@ -46,7 +46,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-dva-hmr": "^0.4.2",
-    "browserslist": "^4.5.4",
+    "browserslist": "^4.16.5",
     "cross-env": "^7.0.0",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.2.0",
